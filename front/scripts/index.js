@@ -1,16 +1,21 @@
-tempData.map((item)=>{
-        const genero=item.genre
-const html = `<div class="col-md-4">
-                <div class="card mb-3">
-                <img src="${item.poster}" class="card-img-top h-60" alt="${item.title}">
-                <div class="card-body">
-                    <h5 class="card-title">${item.title}</h5>
-                    <p class="card-text">${genero.join()}</p>
-                    <p class="card-text"><small class="text-muted">director ${item.director}</small></p>
-                </div>
-                </div>
-            </div>`
-    console.log(html)
-    document.getElementById('pelis').innerHTML+=html
-})
+const filmsSection = document.getElementById('films')
+function renderFilms(movie){
+    const movieElement = document.createElement('article')
+    const containerMovie = document.createElement('div')
+    movieElement.classList.add('movie')
+    containerMovie.classList.add('divMovie')
+
+    movieElement.innerHTML =`<img src="${movie.poster}" alt="${movie.title}">
+    `
+    containerMovie.innerHTML = `
+    <h3>${movie.title} (${movie.year})</h3>
+    <p><strong>Director:</strong> ${movie.director}</p>
+    <p><strong>Duración:</strong> ${movie.duration}</p>
+    <p><strong>Género:</strong> ${movie.genre.join(',')}</p>
+    <p><strong>Rate:</strong> ${movie.rate}</p>
+    `
+    filmsSection.appendChild(movieElement)
+    movieElement.appendChild(containerMovie)
+}
+tempData.forEach(renderFilms)
 console.log(tempData);
