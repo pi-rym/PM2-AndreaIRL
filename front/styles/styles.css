@@ -1,55 +1,172 @@
 body {
   background-image: url("https://i.pinimg.com/564x/d4/20/9c/d4209c8a0797ace5f0a3ca5e58abda19.jpg");
   font-family: monospace;
-  font-optical-sizing: auto;
-  font-size: 25px;
-  font-weight: 800;
-  font-style: normal;
 }
 header {
-  list-style-type: none;
-  margin: 3rem;
-  margin-bottom: 5rem;
-}
-.logo {
   display: flex;
+  background: #64a1fc;
+  text-align: center;
+  padding: 2em;
+  max-height: 15em;
+  width: 80vw;
+  margin-top: 0.5em;
+  margin-left: 9em;
   justify-content: center;
-  width: 50px;
-
+  align-items: center;
+  height: 1em;
 }
 
-ul li {
+#nav {
   display: flex;
-  margin-right: 20px; 
-  
+  align-items: center;
+  color: #fff;
+  background-color: #2c3e50;
 }
-ul li a {
+
+#nav h1 {
+  font-size: 4em;
+  margin-bottom: 0.2em;
+  text-align: center;
+  margin-right: 2em;
+}
+#nav .list {
+  display: contents;
+  align-items: center;
+}
+
+#nav .list li {
+  display: inline;
+}
+
+#nav .list li a {
   text-decoration: none;
   color: #64a1fc;
-  font-weight: bold;
-  align-items: center;
-  font-family: monospace;
-  font-size: 25px;
+  margin-left: 20px;
+  transition: color 0.3s;
+  cursor: pointer;
 }
-img {
+
+#nav .list li a:hover {
+  color: darkgray;
+}
+
+#nav img {
+  width: 4em;
+  margin-right: 20em;
+}
+
+section{
+  padding: 0.5em 0;
+}
+
+#slides img{
+  width: 890px;
+  height: 100%;
+}
+
+#films {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
+  width: 90%;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 80px;
 }
-main, footer{
-  margin: 3rem;
-  padding: auto;
+ #films.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20em;
+  padding-left: 1em;
+  margin-left: 1em;
+
+  flex: 1;
+  flex-basis: 300px;
+  flex-grow: 0;
+  height: 440px;
+  background: rgba(22, 18, 18, 1);
+  border: 2px solid #64a1fc ;
+  box-shadow: 0px 2px 3px rgb(102, 113, 234);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.8,0.5,0.2,1.4);
+  overflow: hidden;
+  position: relative;
+ }
+ 
+#films .movie .divMovie {
+  border: #64a1fc solid 1px;
+  max-width: 200px;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: cyan;
+  width: 100%;
+  height: 100%;
+  transition: all 0.7s ease-in-out;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#films .movie:hover .divMovie {
+  left: 0px;
+  transition: all 0.7s ease-in-out;
+  clip-path: ellipse(75%);
+}
+
+#films .movie:hover {
+  transition: all 0.5s cubic-bezier(0.8,0.5,0.2,1.4);
+  box-shadow: 0px 2px 3px rgb(102, 113, 234);
+  transform: scale(0.97);
+}
+
+#films .movie h3 {
+  padding-left: 0.3em;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+#films .movie p {
+  margin: 15px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+#films.movie:hover img{
+  transition: all 0.5s cubic-bezier(0.8,0.5,0.2,1.4);
+  transform: scale(1.6) rotate(20deg);
+  filter: blur(3px);
+}
+#films img {
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: 0.5em;
+
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s cubic-bezier(0.8,0.5,0.2,1.4);
 }
 
 footer {
+  display: flex;
   text-align: center;
-  font-style: bold;
+  align-items: center;
+  margin: 0.5em 0;
+  font-family: monospace;
+  justify-content: space-around;
+}
+footer .logoDiv {
+  display: flex;
+  flex-direction: column;
 }
 
+footer div img {
+  
+}
 
-.divMovie {
+#divMovie {
   max-height: 800px;
   max-width: 500px;
   background-color: rgb(0, 0, 0);
@@ -61,9 +178,13 @@ footer {
   text-align: center;
 }
 
-.divMovie img {
+#divMovie img {
   max-height: 500px;
   max-width: 400px;
+  align-items: center;
+  padding: 10px;
+  border-width: 15px;
+  margin: 10px;
 }
   
 h1{
@@ -74,7 +195,7 @@ h1{
     font-family: monospace;
   }
   
-h2{
+h3{
     font-size: 35px;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -89,101 +210,8 @@ p{
     font-size: 15px;
     text-align: center;
   }
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #5d78d8cf;
-    border-radius: 0.5rem;
-    width: 90%;
-    margin: 80px;
-    padding: 100px;
-  }
-  #films {
-    display: flex;
-    width: 90%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-    margin: 80px;
-  }
-   #films.movie {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20em;
-    padding-left: 1em;
-    margin-left: 1em;
 
-    flex: 1;
-    flex-basis: 300px;
-    flex-grow: 0;
-    height: 440px;
-    background: rgba(22, 18, 18, 1);
-    border: 2px solid #64a1fc ;
-    box-shadow: 0px 2px 3px rgb(102, 113, 234);
-    cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.8,0.5,0.2,1.4);
-    overflow: hidden;
-    position: relative;
-   }
-   
-  #films .movie .divMovie {
-    border: #64a1fc solid 1px;
-    max-width: 300px;
-
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-color: cyan;
-    width: 100%;
-    height: 100%;
-    transition: all 0.7s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    clip-path: circle(0% at 100% 100%);
-  }
-
-  #films .movie:hover .divMovie {
-    left: 0px;
-    transition: all 0.7s ease-in-out;
-    clip-path: ellipse(75%);
-  }
-
-  #films .movie:hover {
-    transition: all 0.5s cubic-bezier(0.8,0.5,0.2,1.4);
-    box-shadow: 0px 2px 3px rgb(102, 113, 234);
-    transform: scale(0.97);
-  }
-
-  #films .movie h3 {
-    padding-left: 0.3em;
-    color: #ffffff;
-    font-weight: 700;
-    margin-bottom: 1em;
-  }
-  
-  #films .movie p {
-    margin: 0.3em;
-    letter-spacing: 1px;
-    color: #fff;
-  }
-
-  #films.movie:hover img{
-    transition: all 0.5s cubic-bezier(0.8,0.5,0.2,1.4);
-    transform: scale(1.6) rotate(20deg);
-    filter: blur(3px);
-  }
-  #films img {
-    max-height: 400px;
-    object-fit: cover;
-    margin-bottom: 0.5em;
-
-    width: 100%;
-    height: 100%;
-    transition: all 0.5s cubic-bezier(0.8,0.5,0.2,1.4);
-  }
+ 
    
   
   div{
@@ -198,15 +226,7 @@ section{
     box-shadow: 0 4px 8px rgba(5, 44, 242, 0.941);
     margin-bottom: 80px;
     text-align: center;
+    align-items: center;
     transition: background-color 0.3s ease;
   }
-  nav {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    background-color: #03273C;
-    color: #ffffff;
-    /* align-content: center; */
-    align-items: center;
-}
   
